@@ -1,12 +1,15 @@
 package utils;
 
+import entities.api.UserDetails;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.List;
 
 public class ResponseHelper {
 
@@ -26,6 +29,14 @@ public class ResponseHelper {
         }
 
         return null;
+    }
+
+    public static List<UserDetails> getListOfApiResponseObjects(String responseString) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        List<UserDetails> myObjects = mapper.readValue(responseString,
+                new TypeReference<List<UserDetails>>() {
+                });
+        return myObjects;
     }
 
 }

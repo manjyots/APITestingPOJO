@@ -3,22 +3,35 @@ package requestBuilder;
 import entities.api.Location;
 import entities.api.UserDetails;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserDetailsBuilder {
 
     UserDetails request;
 
-    public UserDetailsBuilder() {
+    public UserDetailsBuilder(String employername,String username, int userId, String city, String state) {
         request = new UserDetails();
-        request.setEmployer("jindal Steels");
-        request.setUserName("Rocky");
-        request.setLocation(new Location("haryana","Ambala"));
-
-
+        request.setEmployer(employername);
+        request.setUserName(username);
+        request.setUserId(userId);
+        request.setLocation(location(city,state));
 
     }
 
-    public UserDetails build()
+    public Location location(String city, String state)
     {
-        return request;
+        Location location = new Location();
+        location.setCity("ambala");
+        location.setState("haryana");
+        return location;
+
+    }
+
+    public List<UserDetails> build() {
+        List<UserDetails> userDetails = new ArrayList<UserDetails>();
+        userDetails.add(request);
+        return userDetails;
     }
 }

@@ -23,10 +23,9 @@ public class TestApiResource extends BaseResource {
     }
 
     public Response postApiResponse(String url, String body) {
-        RequestSpecification specification = getSpecification(url)
-                .header("traceID", RandomStringUtils.random(5));
+        RequestSpecification specification = getSpecification(url).body(body);
 
-        Response response = specification.when().post(body);
+        Response response = specification.when().post(url);
 
         System.out.println("post  Response"+response.asString());
 

@@ -12,12 +12,7 @@ import lombok.ToString;
 public class Location {
 
     private String state;
-    private String city;
 
-    public Location(String state , String city)
-    {
-        this.state=state;
-        this.city=city;
-    }
+    private String city;
 
 }

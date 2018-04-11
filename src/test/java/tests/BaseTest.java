@@ -13,6 +13,7 @@ import utils.RequestHelper;
 import utils.ResponseHelper;
 
 import java.io.IOException;
+import java.util.List;
 
 public class
 BaseTest {
@@ -38,7 +39,7 @@ BaseTest {
 
         Assert.assertEquals(200,response.getStatusCode());
 
-        UserDetails userDetailsResponse = (UserDetails)ResponseHelper.getResponseObject(response.asString(),UserDetails.class);
+        List<UserDetails> userDetailsResponse = (List<UserDetails>)ResponseHelper.getListOfApiResponseObjects(response.asString());
 
         Assert.assertNotNull(userDetailsResponse);
     }
@@ -49,11 +50,13 @@ BaseTest {
 
         String url = properties.baseUrl+"/users";
 
-        System.out.println("GetApiURL  :  " + url);
+        System.out.println("PostApiURL  :  " + url);
 
         TestApiResource testApiResource = new TestApiResource(properties);
 
-        UserDetails userDetails = new UserDetailsBuilder().build();
+        List<UserDetails> userDetails = new UserDetailsBuilder("Jk tyre","rocky",12,"Gurgaon","haryana").build();
+
+        System.out.println(RequestHelper.asString(userDetails));
 
         Response response= testApiResource.postApiResponse(url, RequestHelper.asString(userDetails));
 

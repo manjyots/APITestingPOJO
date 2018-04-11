@@ -14,6 +14,8 @@ public class UserDetails {
 
     private Location location;
 
+    private int userId;
+
     private String employer;
 
     private String userName;
