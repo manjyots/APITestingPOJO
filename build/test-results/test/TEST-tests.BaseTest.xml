@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.BaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-04-13T03:50:41" hostname="inmanjyots.local" time="1.801">
+  <properties/>
+  <testcase name="verifyGetApi" classname="tests.BaseTest" time="1.615"/>
+  <testcase name="verifyPostApi" classname="tests.BaseTest" time="0.186"/>
+  <system-out><![CDATA[GetApiURL  :  http://localhost:9000/users
+Get  Response[{"userId":1,"userName":"Robert","employer":"facebook","location":{"state":"California","city":"San Jose"}},{"userId":2,"userName":"Aaron","employer":"Twitter","location":{"state":"New York","city":"New York"}},{"userId":3,"userName":"Michael","employer":"Google","location":{"state":"California","city":"Palo Alto"}},{"userId":4,"userName":"Dan","employer":"Yahoo","location":{"state":"California","city":"Mountain View"}},{"userId":5,"userName":"Steve","employer":"ThoughtWorks","location":{"state":"California","city":"San Francisco"}}]
+PostApiURL  :  http://localhost:9000/users
+[{"location":{"state":"haryana","city":"ambala"},"userId":12,"employer":"Jk tyre","userName":"rocky"}]
+post  Response[{"userId":1,"userName":"Robert","employer":"facebook","location":{"state":"California","city":"San Jose"}},{"userId":2,"userName":"Aaron","employer":"Twitter","location":{"state":"New York","city":"New York"}},{"userId":3,"userName":"Michael","employer":"Google","location":{"state":"California","city":"Palo Alto"}},{"userId":4,"userName":"Dan","employer":"Yahoo","location":{"state":"California","city":"Mountain View"}},{"userId":5,"userName":"Steve","employer":"ThoughtWorks","location":{"state":"California","city":"San Francisco"}},{"userId":6,"userName":"rocky","employer":"Jk tyre","location":{"state":"haryana","city":"ambala"}}]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

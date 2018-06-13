@@ -31,4 +31,14 @@ public class TestApiResource extends BaseResource {
 
         return response;
     }
+
+    public Response putApiResponse(String url, String body) {
+        RequestSpecification specification = getSpecification(url).body(body);
+
+        Response response = specification.when().put(url);
+
+        System.out.println("put  Response"+response.asString());
+
+        return response;
+    }
 }
